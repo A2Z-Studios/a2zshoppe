@@ -1,5 +1,12 @@
 const cart = require('../src/assets/script.js');
 
+/* First, Build the Produdcts. 
+name: name of product (string) 
+price: price of product (number)
+quantity: quantity in cart should start at zero (number)
+productId: unique id for the product (number)
+image: picture of product (url string)*/
+
 describe('Cart Functionality Tests', () => {
     let product1 = cart.products[1];
     let cartArr = cart.cart;
