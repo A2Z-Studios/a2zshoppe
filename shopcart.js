@@ -1,5 +1,6 @@
-/* Create an array named products */
-const products = ["Apples", "Bananas", "Cherries"]
+/* Create an array named products 
+//let products= ["Strawberries", "Oranges", "Cherries"]; 
+Previous array combined with product object to make an array of objects with 5 properties, using const instead// */
 
 /* Create 3 or more product objects using object literal notation 
    Each product should include five properties
@@ -7,45 +8,52 @@ const products = ["Apples", "Bananas", "Cherries"]
    - price: price of product (number)
    - quantity: quantity in cart should start at zero (number)
    - productId: unique id for the product (number)
-   - image: picture of product (url string)
-*/
-const productDetail = [
+   - image: picture of product (url string)*/
+
+  const products = [
   { 
   name: "Strawberries",
   price: 2.99,
-  quantity: 1,
-  productId: 001,
-  image:"/workspace/home/src/images/strawberry.jpg"
+  quantity: 0,
+  productId: 100,
+  image:"/images/strawberry.jpg",
 },
-{
+{ 
   name: "Oranges",
   price: .89,
-  quantity: 6,
-  productId: 002,
-  image:"/workspace/home/src/images/orange.jpg"
+  quantity: 0,
+  productId: 101,
+  image:"/workspace/home/src/images/orange.jpg",
 },
+
 {
   name:"Cherries",
   price: 4.99,
-  quantity: 1,
-  productId: 003,
-  image: "/home/src/images/cherry.jpg"
+  quantity: 0,
+  productId: 102,
+  image: "/home/src/images/cherry.jpg",
 }
-]
+];
 
 /* Declare an empty array named cart to hold the items in the cart */
-let cart = [];
+  let cart = [];
 
 /* Create a function named addProductToCart that takes in the product productId as an argument
   - addProductToCart should get the correct product based on the productId
   - addProductToCart should then increase the product's quantity
   - if the product is not already in the cart, add it to the cart
 */
-function addProductCart(){
-  let productId = 
-  console.log(addProductCart)
-
+  function addProductToCart(productId) {
+    const item = products.find(product => product.productId  === productId);
+    if (item) {
+      item.quantity++;
+      cart.push(item);
+      console.log("Product " + productId + " was added to your cart." );
+    } else {
+      console.log("Product #" + productId + " is invalid. Please try again");
+  }
 }
+return ("Items in your cart: " + item);
 
 /* Create a function named increaseQuantity that takes in the productId as an argument
   - increaseQuantity should get the correct product based on the productId
