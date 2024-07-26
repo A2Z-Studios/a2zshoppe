@@ -43,17 +43,22 @@ Previous array combined with product object to make an array of objects with 5 p
   - addProductToCart should then increase the product's quantity
   - if the product is not already in the cart, add it to the cart
 */
-  function addProductToCart(productId) {
-    const item = products.find(product => product.productId  === productId);
-    if (item) {
-      item.quantity++;
-      cart.push(item);
+ function addProductToCart(productId){
+    const item = products.find(function(product){
+    return product.productId  === productId}); 
+    if (item) { //my argument to decide when to add product to cart
+      item.quantity++; //will increase by x=x+1
+      cart.push(item); //will push item and new quantity to cart array
       console.log("Product " + productId + " was added to your cart." );
     } else {
       console.log("Product #" + productId + " is invalid. Please try again");
   }
-}
-return ("Items in your cart: " + item);
+
+    return ("Items in your cart: " + item.quantity)
+    //statements that will appear depending on the instance
+};
+
+//console.log(addProductToCart(100))
 
 /* Create a function named increaseQuantity that takes in the productId as an argument
   - increaseQuantity should get the correct product based on the productId
